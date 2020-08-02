@@ -8,6 +8,7 @@ import MissionKey from './MissionKey';
 const LAUNCHES_QUERY = gql`
   query LaunchesQuery {
     launches {
+      id
       flight_number
       name
       date_local

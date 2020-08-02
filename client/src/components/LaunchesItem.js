@@ -3,9 +3,7 @@ import classNames from 'classnames';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 
-const LaunchItem = ({
-  launch: { flight_number, name, date_local, success },
-}) => {
+const LaunchItem = ({ launch: { id, name, date_local, success } }) => {
   return (
     <div className="card card-body mb-3">
       <div className="row">
@@ -26,7 +24,7 @@ const LaunchItem = ({
           </p>
         </div>
         <div className="col-md-3">
-          <Link to={`/launch/${flight_number}`} className="btn btn-secondary">
+          <Link to={`/launch/${id}`} className="btn btn-secondary">
             Launch Details
           </Link>
         </div>

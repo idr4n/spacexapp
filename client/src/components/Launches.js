@@ -3,6 +3,7 @@ import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
 import LaunchItem from './LaunchesItem';
+import MissionKey from './MissionKey';
 
 const LAUNCHES_QUERY = gql`
   query LaunchesQuery {
@@ -30,10 +31,10 @@ const Launches = () => {
   return (
     <React.Fragment>
       <h1 className="display-4 my-3">Launches</h1>
+      <MissionKey />
       {displayLaunches()}
     </React.Fragment>
   );
 };
 
 export default Launches;
-

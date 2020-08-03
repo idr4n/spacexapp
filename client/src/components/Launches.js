@@ -41,6 +41,8 @@ const Launches = () => {
     totalLaunches = filteredLaunches.length;
   }
 
+  filteredLaunches.sort((a, b) => (a.date_local < b.date_local ? 1 : -1));
+
   const displayLaunches = () => {
     return filteredLaunches.map((launch) => (
       <LaunchItem key={launch.flight_number} launch={launch} />
@@ -49,7 +51,9 @@ const Launches = () => {
 
   return (
     <React.Fragment>
-      <h1 className="display-4 my-3">Launches (total = {totalLaunches})</h1>
+      <h1 className="display-4 my-3">
+        Launches <small className="text-muted">(total: {totalLaunches})</small>
+      </h1>
       <MissionKey />
       {displayLaunches()}
     </React.Fragment>
